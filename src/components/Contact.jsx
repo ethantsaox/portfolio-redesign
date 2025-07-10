@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import emailIcon from '../assets/emailIcon.png';
-import phoneIcon from '../assets/phoneicon.png';
 
 function Contact() {
   const [formData, setFormData] = useState({
