@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body, #root {
+  width: 100%;
+  min-width: 0;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  background-color: #0a0a0a;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 0;
+  scroll-snap-type: none;
+  overscroll-behavior: none;
+  scroll-behavior: smooth;
+  /* For even smoother effect, use scroll-snap and momentum if needed */
+  background: #0a0a0a;
+}
+body {
+  scroll-behavior: smooth;
+  transition: scroll 0.5s cubic-bezier(.4,1.2,.4,1);
+  overscroll-behavior: none;
+  background: #0a0a0a;
+}
+
+html, body {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE 10+ */
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+html::-webkit-scrollbar, body::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}

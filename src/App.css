@@ -1,0 +1,124 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+@keyframes coin-pop {
+  0% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  70% {
+    opacity: 1;
+    transform: translateY(-40px) scale(1.2);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-60px) scale(0.8);
+  }
+}
+.animate-coin-pop {
+  animation: coin-pop 0.8s cubic-bezier(.4,1.2,.4,1) forwards;
+}
+
+@keyframes coin-pop-fast {
+  0% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  70% {
+    opacity: 1;
+    transform: translateY(-30px) scale(1.1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-40px) scale(0.8);
+  }
+}
+.animate-coin-pop-fast {
+  animation: coin-pop-fast 0.35s cubic-bezier(.4,1.2,.4,1) forwards;
+}
+
+@keyframes border-worm {
+  0% {
+    border-image-source: linear-gradient(90deg, #3b82f6 0%, transparent 0%);
+    border-image-slice: 1;
+  }
+  25% {
+    border-image-source: linear-gradient(180deg, #3b82f6 0%, transparent 0%);
+    border-image-slice: 1;
+  }
+  50% {
+    border-image-source: linear-gradient(270deg, #3b82f6 0%, transparent 0%);
+    border-image-slice: 1;
+  }
+  75% {
+    border-image-source: linear-gradient(360deg, #3b82f6 0%, transparent 0%);
+    border-image-slice: 1;
+  }
+  100% {
+    border-image-source: linear-gradient(450deg, #3b82f6 100%, transparent 0%);
+    border-image-slice: 1;
+  }
+}
+
+.profile-worm-border {
+  position: relative;
+  z-index: 1;
+}
+.profile-worm-border::after {
+  content: '';
+  position: absolute;
+  inset: -6px;
+  border-radius: 1.25rem;
+  border: 4px solid transparent;
+  pointer-events: none;
+  z-index: 2;
+  border-image: linear-gradient(90deg, #3b82f6 0%, transparent 0%);
+  border-image-slice: 1;
+  animation: border-worm 1.5s linear forwards;
+}
+
+.profile-worm-border:not(:hover)::after {
+  animation: none;
+  border-image: none;
+  border-color: #232329;
+}

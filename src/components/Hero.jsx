@@ -1,0 +1,99 @@
+import React, { useState } from 'react';
+import profilePic from '../assets/profile-pic7.jpg';
+import oryxGif from '../assets/oryx.gif';
+import goldCoin from '../assets/gold.png';
+
+function Hero() {
+  const [coins, setCoins] = useState([]);
+
+  function handleOryxClick(e) {
+    const rect = e.target.getBoundingClientRect();
+    const parentRect = document.getElementById('hero').getBoundingClientRect();
+    // Randomize offset within -20px to +20px for both x and y
+    const offsetX = Math.random() * 40 - 20;
+    const offsetY = Math.random() * 40 - 20;
+    // Position relative to hero section
+    const id = Date.now() + Math.random();
+    const x = rect.right - rect.width / 2 + offsetX - parentRect.left;
+    const y = rect.top + rect.height / 2 + offsetY - parentRect.top;
+    setCoins((prev) => [
+      ...prev,
+      { id, x, y }
+    ]);
+    setTimeout(() => {
+      setCoins((prev) => prev.filter((c) => c.id !== id));
+    }, 400);
+  }
+
+  function handleAnimationEnd(id) {
+    setCoins((prev) => prev.filter((c) => c.id !== id));
+  }
+
+  return (
+    <section
+      id="hero"
+      className="w-full min-h-[40vh] flex items-center justify-center px-4 pt-4 pb-8 relative"
+    >
+      {/* Oryx in top right corner */}
+      <img
+        src={oryxGif}
+        alt="Oryx"
+        className="w-9 h-9 absolute top-4 right-4 md:top-8 md:right-8 z-20 rounded cursor-pointer"
+        onClick={handleOryxClick}
+      />
+      {/* Coin Animation */}
+      {coins.map((coin) => (
+        <div
+          key={coin.id}
+          className="pointer-events-none absolute z-50"
+          style={{ left: `${coin.x}px`, top: `${coin.y}px` }}
+        >
+          <img
+            src={goldCoin}
+            alt="Coin"
+            className="w-7 h-7 animate-coin-pop-fast select-none"
+            onAnimationEnd={() => handleAnimationEnd(coin.id)}
+          />
+        </div>
+      ))}
+      <div className="w-full max-w-3xl flex flex-col md:flex-row items-center justify-center gap-1 md:gap-3">
+        {/* Text Content */}
+        <div className="flex flex-col justify-center items-center md:items-start gap-2 text-center md:text-left order-2 md:order-1 md:max-w-[28rem] w-full">
+          <h1 className="text-2xl md:text-3xl font-bold mb-0.5 tracking-tight leading-tight text-white">
+            Hey! Ethan here. <span className="inline-block align-middle ml-1"></span>
+          </h1>
+          <div className="text-lg md:text-xl font-medium mb-0.5 text-gray-200">
+            21yo student from California
+          </div>
+          <div className="text-base md:text-lg text-gray-200 mb-0.5">
+            Data science, full-stack, and analytics.<br />
+            I build, analyze, and automate.
+          </div>
+          <div className="text-base font-semibold text-white mb-0.5">
+            For Q&amp;A, <span className="text-gray-100">email me directly</span>
+          </div>
+          <div className="text-sm text-gray-400 mb-1">
+            For more info, please find my <span className="font-medium text-gray-300">LinkedIn</span> instead.
+          </div>
+          <div className="flex flex-wrap gap-3 items-center justify-center md:justify-start mt-0.5">
+            <a href="/Ethan_Tsao_Resume_Summer25.pdf" target="_blank" rel="noopener noreferrer" className="min-w-[90px] px-3 py-1 rounded-xl border border-[#232329] bg-[#18181b] hover:bg-[#232329] font-medium flex items-center justify-center text-sm text-white transition hover:scale-105 hover:shadow-lg">
+              Resume
+            </a>
+            <a href="https://www.linkedin.com/in/ethandtsao/" target="_blank" rel="noopener noreferrer" className="group hover:text-[#3b82f6] transition" title="LinkedIn">
+              <svg width="24" height="24" className="inline transition-colors duration-200 fill-white group-hover:fill-[#3b82f6]"><path d="M19 0h-14c-2.76 0-5 2.24-5 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5v-14c0-2.76-2.24-5-5-5zm-11 19h-3v-9h3v9zm-1.5-10.28c-.97 0-1.75-.79-1.75-1.75s.78-1.75 1.75-1.75 1.75.79 1.75 1.75-.78 1.75-1.75 1.75zm13.5 10.28h-3v-4.5c0-1.08-.02-2.47-1.5-2.47-1.5 0-1.73 1.17-1.73 2.39v4.58h-3v-9h2.89v1.23h.04c.4-.75 1.38-1.54 2.84-1.54 3.04 0 3.6 2 3.6 4.59v4.72z"/></svg>
+            </a>
+            <a href="https://github.com/ethantsaox" target="_blank" rel="noopener noreferrer" className="group hover:text-[#3b82f6] transition flex items-center" title="GitHub">
+              <svg width="24" height="24" className="inline transition-colors duration-200 fill-white group-hover:fill-[#3b82f6]"><path d="M12 0.297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.387 0.6 0.113 0.82-0.258 0.82-0.577 0-0.285-0.01-1.04-0.015-2.04-3.338 0.724-4.042-1.61-4.042-1.61-0.546-1.387-1.333-1.756-1.333-1.756-1.089-0.745 0.084-0.729 0.084-0.729 1.205 0.084 1.84 1.236 1.84 1.236 1.07 1.834 2.809 1.304 3.495 0.997 0.108-0.775 0.418-1.305 0.762-1.605-2.665-0.305-5.466-1.334-5.466-5.931 0-1.31 0.469-2.381 1.236-3.221-0.124-0.303-0.535-1.523 0.117-3.176 0 0 1.008-0.322 3.301 1.23 0.957-0.266 1.984-0.399 3.003-0.404 1.019 0.005 2.047 0.138 3.006 0.404 2.291-1.553 3.297-1.23 3.297-1.23 0.653 1.653 0.242 2.873 0.119 3.176 0.77 0.84 1.235 1.911 1.235 3.221 0 4.609-2.803 5.624-5.475 5.921 0.43 0.372 0.823 1.102 0.823 2.222 0 1.606-0.014 2.898-0.014 3.293 0 0.322 0.216 0.694 0.825 0.576C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12z"/></svg>
+            </a>
+          </div>
+        </div>
+        {/* Profile Image */}
+        <div className="flex justify-center items-center order-1 md:order-2 md:max-w-[40%]">
+          <img src={profilePic} alt="Ethan Tsao" className="w-40 h-40 md:w-52 md:h-52 object-cover rounded-2xl shadow-xl border-4 border-[#232329]" />
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export default Hero; 
