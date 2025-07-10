@@ -13,6 +13,7 @@ import pytorchLogo from '../assets/pytorchlogo.png';
 import jupyterLogo from '../assets/jupyterlogo.png';
 import scikitLogo from '../assets/scikitlogo.png';
 import tensorLogo from '../assets/tensorlogo.png';
+import circleCursor from '../assets/circlecursor.png';
 
 const skills = [
   { name: 'Python', icon: pythonLogo },
@@ -36,13 +37,20 @@ function Experience() {
         <div className="w-full max-w-2xl mx-auto">
           <h2 className="text-xs md:text-sm font-medium mb-3 text-center border border-[#232329] rounded-lg bg-[#18181b] px-2 py-1 inline-block w-auto">Tech Stack</h2>
         </div>
-        <div className="grid grid-cols-4 gap-3 w-full max-w-2xl mx-auto">
+        <div 
+          className="grid grid-cols-4 gap-3 w-full max-w-2xl mx-auto"
+          style={{ cursor: `url(${circleCursor}), auto` }}
+        >
           {skills.map((skill) => (
             <div
               key={skill.name}
-              className="border border-[#232329] rounded-xl shadow flex flex-col items-center justify-center py-3 transition hover:border-[#3b82f6]"
+              className="border border-[#232329] rounded-xl shadow flex flex-col items-center justify-center py-3 transition hover:border-[#3b82f6] group"
             >
-              <img src={skill.icon} alt={skill.name} className="w-7 h-7 mb-2" />
+              <img 
+                src={skill.icon} 
+                alt={skill.name} 
+                className="w-7 h-7 mb-2 transition-transform duration-200 group-hover:-translate-y-1" 
+              />
               <span className="text-gray-100 text-xs font-medium text-center">{skill.name}</span>
             </div>
           ))}

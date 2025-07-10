@@ -42,7 +42,7 @@ function Contact() {
       <div className="w-full max-w-[44rem] mx-auto px-4 flex flex-col items-center">
         {/* Make the Contact title left-justified and aligned with the form */}
         <div className="w-full flex justify-start">
-          <h2 className="text-xs md:text-sm font-medium mb-3 text-left border border-[#232329] rounded-lg bg-[#18181b] px-2 py-1 inline-block w-auto">Contact</h2>
+          <h2 className="text-xs md:text-sm font-medium mb-3 text-left border border-[#232329] rounded-lg bg-[#18181b] px-2 py-1 inline-block w-auto">Reach Out</h2>
         </div>
         <form onSubmit={handleSubmit} className="w-full flex flex-col gap-5 rounded-2xl border border-[#232329] p-4 bg-transparent">
           <div className="flex flex-col md:flex-row gap-3">

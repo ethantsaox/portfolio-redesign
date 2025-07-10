@@ -38,3 +38,8 @@ html, body {
 html::-webkit-scrollbar, body::-webkit-scrollbar {
   display: none; /* Chrome, Safari, Opera */
 }
+
+/* Custom cursor for tech stack icons */
+.tech-stack-icon {
+  cursor: url('./assets/circlecursor.png'), auto;
+}

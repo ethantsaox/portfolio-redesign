@@ -1,8 +1,8 @@
 import React, { useRef, useEffect } from 'react';
 
-const DOTS = 8;
-const DOT_SIZE = 2;
-const SPEED = 0.2;
+const DOTS = 10;
+const DOT_SIZE = 1.5;
+const SPEED = 0.15;
 
 function random(min, max) {
   return Math.random() * (max - min) + min;
@@ -37,7 +37,7 @@ function AnimatedDotsBackground() {
           y: random(height * 0.7, height),
           vx: random(-SPEED, SPEED),
           vy: random(-SPEED, SPEED),
-          alpha: random(0.2, 0.5),
+          alpha: random(0.85, 1),
         };
       } else {
         return {
@@ -45,7 +45,7 @@ function AnimatedDotsBackground() {
           y: random(0, height),
           vx: random(-SPEED, SPEED),
           vy: random(-SPEED, SPEED),
-          alpha: random(0.2, 0.5),
+          alpha: random(0.85, 1),
         };
       }
     });
@@ -65,9 +65,9 @@ function AnimatedDotsBackground() {
         ctx.globalAlpha = dot.alpha;
         ctx.beginPath();
         ctx.arc(dot.x, dot.y, DOT_SIZE, 0, 2 * Math.PI);
-        ctx.fillStyle = '#fff';
-        ctx.shadowColor = '#fff';
-        ctx.shadowBlur = 2;
+        ctx.fillStyle = '#ffffff';
+        ctx.shadowColor = '#ffffff';
+        ctx.shadowBlur = 8;
         ctx.fill();
         ctx.restore();
       }

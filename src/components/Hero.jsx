@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import profilePic from '../assets/profile-pic7.jpg';
 import oryxGif from '../assets/oryx.gif';
 import goldCoin from '../assets/gold.png';
+import resumeIcon from '../assets/resume.png';
 
 function Hero() {
   const [coins, setCoins] = useState([]);
@@ -76,8 +77,9 @@ function Hero() {
             For more info, please find my <span className="font-medium text-gray-300">LinkedIn</span> instead.
           </div>
           <div className="flex flex-wrap gap-3 items-center justify-center md:justify-start mt-0.5">
-            <a href="/Ethan_Tsao_Resume_Summer25.pdf" target="_blank" rel="noopener noreferrer" className="min-w-[90px] px-3 py-1 rounded-xl border border-[#232329] bg-[#18181b] hover:bg-[#232329] font-medium flex items-center justify-center text-sm text-white transition hover:scale-105 hover:shadow-lg">
+            <a href="/Ethan_Tsao_Resume_Summer25.pdf" target="_blank" rel="noopener noreferrer" className="text-xs md:text-sm font-medium border border-[#232329] rounded-lg bg-[#18181b] px-2 py-1 inline-block w-auto text-white hover:bg-[#232329] transition flex items-center gap-1">
               Resume
+              <img src={resumeIcon} alt="Resume" className="w-5 h-5" />
             </a>
             <a href="https://www.linkedin.com/in/ethandtsao/" target="_blank" rel="noopener noreferrer" className="group hover:text-[#3b82f6] transition" title="LinkedIn">
               <svg width="24" height="24" className="inline transition-colors duration-200 fill-white group-hover:fill-[#3b82f6]"><path d="M19 0h-14c-2.76 0-5 2.24-5 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5v-14c0-2.76-2.24-5-5-5zm-11 19h-3v-9h3v9zm-1.5-10.28c-.97 0-1.75-.79-1.75-1.75s.78-1.75 1.75-1.75 1.75.79 1.75 1.75-.78 1.75-1.75 1.75zm13.5 10.28h-3v-4.5c0-1.08-.02-2.47-1.5-2.47-1.5 0-1.73 1.17-1.73 2.39v4.58h-3v-9h2.89v1.23h.04c.4-.75 1.38-1.54 2.84-1.54 3.04 0 3.6 2 3.6 4.59v4.72z"/></svg>

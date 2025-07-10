@@ -8,28 +8,31 @@ function About() {
   return (
     <section id="about" className="w-full min-h-[40vh] text-white pt-8 pb-8 flex justify-center items-start">
       <div className="w-full max-w-2xl mx-auto">
-        <div className="flex bg-[#18181b] mb-3 border border-[#232329] justify-between items-center px-1 py-0.5 rounded-xl">
+        <div className="flex bg-[#18181b] mb-3 border border-[#232329] justify-between items-center rounded-lg">
           <button
-            className={`flex-1 py-1 font-medium transition text-sm rounded-xl z-10 border ${tab === 'work' ? 'bg-white text-black border-[#232329] shadow' : 'text-white bg-[#18181b] border-transparent shadow-none'}`}
+            className={`flex-1 px-3 py-2 font-medium transition text-sm z-10 rounded-lg ${tab === 'work' ? 'bg-white text-black shadow' : 'bg-transparent text-gray-300'}`}
             onClick={() => setTab('work')}
             style={{ position: 'relative' }}
           >
             Work
           </button>
           <button
-            className={`flex-1 py-1 font-medium transition text-sm rounded-xl z-10 border ${tab === 'studies' ? 'bg-white text-black border-[#232329] shadow' : 'text-white bg-[#18181b] border-transparent shadow-none'}`}
+            className={`flex-1 px-3 py-2 font-medium transition text-sm z-10 rounded-lg ${tab === 'studies' ? 'bg-white text-black shadow' : 'bg-transparent text-gray-300'}`}
             onClick={() => setTab('studies')}
             style={{ position: 'relative' }}
           >
-            Studies
+            Education
           </button>
         </div>
         <div className="rounded-2xl border border-[#232329] p-2 md:p-3 text-sm">
           {tab === 'work' ? (
             <div className="flex flex-col gap-3 relative">
+              <div className="absolute top-0 bottom-0 left-0 flex flex-col items-center w-10" style={{zIndex: 0}}>
+                <div className="absolute top-0 bottom-0 left-1/2 -translate-x-1/2 w-px bg-[#232329] -mt-3 -mb-3" />
+              </div>
               {/* Aquila Clouds */}
-              <div className="flex gap-3 items-start relative z-10 group">
-                <div className="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center overflow-hidden transition-transform duration-200 group-hover:scale-110">
+              <div className="flex gap-3 items-center relative z-10 group">
+                <div className="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center overflow-hidden transition-transform duration-200 group-hover:scale-110 -translate-y-5 z-10">
                   <img src={aquilaIcon} alt="Aquila Clouds" className="w-10 h-10 object-cover" />
                 </div>
                 <div>
@@ -42,8 +45,8 @@ function About() {
                 </div>
               </div>
               {/* Mosher Alumni Hall */}
-              <div className="flex gap-3 items-start relative z-10 group">
-                <div className="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center overflow-hidden transition-transform duration-200 group-hover:scale-110">
+              <div className="flex gap-3 items-center relative z-10 group">
+                <div className="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center overflow-hidden transition-transform duration-200 group-hover:scale-110 -translate-y-5 z-10">
                   <span className="text-white text-base font-semibold">M</span>
                 </div>
                 <div>
@@ -56,8 +59,8 @@ function About() {
                 </div>
               </div>
               {/* Quickly Corporation */}
-              <div className="flex gap-3 items-start relative z-10 group">
-                <div className="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center overflow-hidden transition-transform duration-200 group-hover:scale-110">
+              <div className="flex gap-3 items-center relative z-10 group">
+                <div className="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center overflow-hidden transition-transform duration-200 group-hover:scale-110 -translate-y-5 z-10">
                   <span className="text-white text-base font-semibold">Q</span>
                 </div>
                 <div>
@@ -72,9 +75,12 @@ function About() {
             </div>
           ) : (
             <div className="flex flex-col gap-3 relative">
+              <div className="absolute top-0 bottom-0 left-0 flex flex-col items-center w-10" style={{zIndex: 0}}>
+                <div className="absolute top-0 bottom-0 left-1/2 -translate-x-1/2 w-px bg-[#232329] -mt-3 -mb-3" />
+              </div>
               {/* UCSB */}
-              <div className="flex gap-3 items-start relative z-10 group">
-                <div className="w-10 h-10 rounded-full flex items-center justify-center overflow-hidden transition-transform duration-200 group-hover:scale-110">
+              <div className="flex gap-3 items-center relative z-10 group">
+                <div className="w-10 h-10 rounded-full flex items-center justify-center overflow-hidden transition-transform duration-200 group-hover:scale-110 -translate-y-5 z-10">
                   <img src={ucsbIcon} alt="UCSB" className="w-10 h-10 object-cover" />
                 </div>
                 <div>
@@ -87,8 +93,8 @@ function About() {
                 </div>
               </div>
               {/* Dougherty Valley High School */}
-              <div className="flex gap-3 items-start relative z-10 group">
-                <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center overflow-hidden transition-transform duration-200 group-hover:scale-110">
+              <div className="flex gap-3 items-center relative z-10 group">
+                <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center overflow-hidden transition-transform duration-200 group-hover:scale-110 -translate-y-5 z-10">
                   <img src={dvhsIcon} alt="Dougherty Valley High School" className="w-10 h-10 object-cover" />
                 </div>
                 <div>
