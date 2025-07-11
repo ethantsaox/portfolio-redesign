@@ -25,18 +25,6 @@ function SplashScreen() {
           marginBottom: 28,
         }}
       />
-      <div style={{
-        color: 'white',
-        fontFamily: 'sans-serif',
-        fontWeight: 900,
-        fontSize: 34,
-        letterSpacing: '0.01em',
-        textAlign: 'center',
-        textShadow: '0 2px 0 #222, 0 0 8px #fff2',
-        lineHeight: 1.1,
-      }}>
-        Nexus
-      </div>
     </div>
   );
 }
