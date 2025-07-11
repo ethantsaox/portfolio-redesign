@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import profilePic from '../assets/profile-pic7.jpg';
+import profilePic from '../assets/profile-pic8.JPG';
 import resumeIcon from '../assets/resume.png';
 import whiteArrowGif from '../assets/whitearrowgif.gif';
 import gswLogo from '../assets/gsw.png';
@@ -55,7 +55,7 @@ function Hero() {
         </div>
         {/* Profile Image */}
         <div className="flex justify-center items-center order-1 md:order-2 md:max-w-[40%]">
-          <img src={profilePic} alt="Ethan Tsao" className="w-40 h-40 md:w-52 md:h-52 object-cover rounded-2xl shadow-xl border-4 border-[#232329]" />
+          <img src={profilePic} alt="Ethan Tsao" className="w-40 h-48 md:w-52 md:h-64 object-cover rounded-2xl shadow-xl border-4 border-[#232329]" />
         </div>
       </div>
     </section>
