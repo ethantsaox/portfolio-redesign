@@ -13,7 +13,6 @@ import pytorchLogo from '../assets/pytorchlogo.png';
 import jupyterLogo from '../assets/jupyterlogo.png';
 import scikitLogo from '../assets/scikitlogo.png';
 import tensorLogo from '../assets/tensorlogo.png';
-import circleCursor from '../assets/circlecursor.png';
 
 const skills = [
   { name: 'Python', icon: pythonLogo },
@@ -39,7 +38,6 @@ function Experience() {
         </div>
         <div 
           className="grid grid-cols-4 gap-3 w-full max-w-2xl mx-auto"
-          style={{ cursor: `url(${circleCursor}), auto` }}
         >
           {skills.map((skill) => (
             <div
