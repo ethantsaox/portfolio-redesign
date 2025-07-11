@@ -1,11 +1,7 @@
 import React from 'react';
 import { GlobeAltIcon, CodeBracketIcon } from '@heroicons/react/24/outline';
-import youtubeApiImg from '../assets/youtubeapi.png';
-import restaurantImg from '../assets/restaurant.png';
-import downArrow from '../assets/downarrow.png';
-import tt4dImg from '../assets/portfolioimg.png';
-import dashboardImg from '../assets/Dashboard 1.png';
-import worldhappyImg from '../assets/worldhappy.png';
+import dashboardImg from '../assets/Dashboard-1-optimized.png';
+import worldhappyImg from '../assets/worldhappy-optimized.png';
 import bankmanGif from '../assets/bankman.gif';
 import cloneGif from '../assets/clone.gif';
 import { useFadeInOnScroll } from '../hooks/useFadeInOnScroll';
@@ -100,7 +96,7 @@ function Projects() {
               className="rounded-xl border border-[#232329] shadow-lg p-0 flex flex-col justify-between items-start h-72 transition hover:shadow-2xl relative"
             >
               <div className="w-full rounded-t-xl overflow-hidden h-36 bg-black/10 border-b border-white/10">
-                <img src={project.image} alt={project.title} className="object-cover w-full h-full" />
+                <img src={project.image} alt={project.title} className="object-cover w-full h-full" loading="lazy" />
               </div>
               <div className="p-2 flex flex-col flex-1 w-full justify-between">
                 <h2 className="text-sm font-semibold mb-1 text-white mt-1">{project.title}</h2>

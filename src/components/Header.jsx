@@ -35,7 +35,7 @@ function Header({ darkMode, setDarkMode }) {
       </nav>
       <section id="profile" className="flex flex-col md:flex-row items-center justify-center gap-12 max-w-5xl mx-auto mt-20 px-4 relative">
         <div className="rounded-2xl overflow-hidden shadow-lg w-64 h-64 flex-shrink-0">
-          <img src={profilePic} alt="Ethan Tsao profile" className="object-cover w-full h-full" />
+          <img src={profilePic} alt="Ethan Tsao profile" className="object-cover w-full h-full" loading="lazy" />
         </div>
         <div className="flex flex-col items-center md:items-start text-center md:text-left max-w-md">
           <p className="text-gray-100 text-lg font-semibold mb-2">Hello <span role="img" aria-label="wave">👋</span>, I'm</p>
@@ -47,15 +47,15 @@ function Header({ darkMode, setDarkMode }) {
           </div>
           <div className="flex gap-4 mt-2 justify-center md:justify-start">
             <a href="https://www.linkedin.com/in/ethandtsao/" target="_blank" rel="noopener noreferrer" className="hover:scale-110 transition">
-              <img src={linkedinIcon} alt="My LinkedIn profile" className="w-8 h-8" />
+              <img src={linkedinIcon} alt="My LinkedIn profile" className="w-8 h-8" loading="lazy" />
             </a>
             <a href="https://github.com/ethantsaox" target="_blank" rel="noopener noreferrer" className="hover:scale-110 transition">
-              <img src={githubIcon} alt="My Github profile" className="w-8 h-8" />
+              <img src={githubIcon} alt="My Github profile" className="w-8 h-8" loading="lazy" />
             </a>
           </div>
         </div>
         <a href="#about" className="hidden md:block absolute left-1/2 -bottom-12 transform -translate-x-1/2 animate-bounce">
-          <img src={downArrow} alt="Arrow icon" className="w-8 h-8 opacity-70" />
+          <img src={downArrow} alt="Arrow icon" className="w-8 h-8 opacity-70" loading="lazy" />
         </a>
       </section>
     </header>

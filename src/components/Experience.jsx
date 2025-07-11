@@ -9,8 +9,6 @@ import gitLogo from '../assets/gitlogo.png';
 import tableauLogo from '../assets/tableaulogo.png';
 import pandasLogo from '../assets/pandaslogo.png';
 import htmlLogo from '../assets/htmllogo.png';
-import pytorchLogo from '../assets/pytorchlogo.png';
-import jupyterLogo from '../assets/jupyterlogo.png';
 import scikitLogo from '../assets/scikitlogo.png';
 import tensorLogo from '../assets/tensorlogo.png';
 import { useFadeInOnScroll } from '../hooks/useFadeInOnScroll';

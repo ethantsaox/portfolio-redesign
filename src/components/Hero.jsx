@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import profilePic from '../assets/profile-pic8.JPG';
+import profilePic from '../assets/profile-pic8-optimized.jpg';
 import resumeIcon from '../assets/resume.png';
 import whiteArrowGif from '../assets/whitearrowgif.gif';
 import gswLogo from '../assets/gsw.png';
@@ -27,7 +27,7 @@ function Hero() {
           </h1>
           <div className="text-base md:text-lg mb-0.5 text-gray-200 flex items-center justify-center md:justify-start gap-2 relative">
             21yo student from the Bay Area
-            <img src={gswLogo} alt="Golden State Warriors" className="w-9 h-10 absolute top-1/2 -translate-y-1/2 left-full ml-2" />
+            <img src={gswLogo} alt="Golden State Warriors" className="w-9 h-10 absolute top-1/2 -translate-y-1/2 left-full ml-2" loading="lazy" />
           </div>
           <div className="text-base md:text-lg text-gray-200 mb-0.5">
             Data science, full-stack, and analytics.<br />
@@ -35,7 +35,7 @@ function Hero() {
           </div>
           <div className="text-base font-semibold text-white mb-0.5 relative">
             Questions? <span className="text-gray-100">email me directly below</span>
-            <img src={whiteArrowGif} alt="Arrow" className="w-12 h-12 absolute -right-12 top-1/2 -translate-y-1/2" />
+            <img src={whiteArrowGif} alt="Arrow" className="w-12 h-12 absolute -right-12 top-1/2 -translate-y-1/2" loading="lazy" />
           </div>
           <div className="text-sm text-gray-400 mb-1">
             For more info, please find my <span className="font-medium text-gray-300">LinkedIn</span> instead.
@@ -43,7 +43,7 @@ function Hero() {
           <div className="flex flex-wrap gap-3 items-center justify-center md:justify-start mt-0.5">
             <a href="/Ethan_Tsao_Resume_Summer25.pdf" target="_blank" rel="noopener noreferrer" className="text-xs md:text-sm font-medium border border-[#232329] rounded-lg bg-[#18181b] px-2 py-1 inline-block w-auto text-white hover:bg-[#232329] transition flex items-center gap-1">
               Resume
-              <img src={resumeIcon} alt="Resume" className="w-5 h-5" />
+              <img src={resumeIcon} alt="Resume" className="w-5 h-5" loading="lazy" />
             </a>
             <a href="https://www.linkedin.com/in/ethandtsao/" target="_blank" rel="noopener noreferrer" className="group hover:text-[#3b82f6] transition hover:scale-110 transition-transform duration-200" title="LinkedIn">
               <svg width="24" height="24" className="inline transition-colors duration-200 fill-white group-hover:fill-[#3b82f6]"><path d="M19 0h-14c-2.76 0-5 2.24-5 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5v-14c0-2.76-2.24-5-5-5zm-11 19h-3v-9h3v9zm-1.5-10.28c-.97 0-1.75-.79-1.75-1.75s.78-1.75 1.75-1.75 1.75.79 1.75 1.75-.78 1.75-1.75 1.75zm13.5 10.28h-3v-4.5c0-1.08-.02-2.47-1.5-2.47-1.5 0-1.73 1.17-1.73 2.39v4.58h-3v-9h2.89v1.23h.04c.4-.75 1.38-1.54 2.84-1.54 3.04 0 3.6 2 3.6 4.59v4.72z"/></svg>
@@ -55,7 +55,7 @@ function Hero() {
         </div>
         {/* Profile Image */}
         <div className="flex justify-center items-center order-1 md:order-2 md:max-w-[40%]">
-          <img src={profilePic} alt="Ethan Tsao" className="w-40 h-48 md:w-52 md:h-64 object-cover rounded-2xl shadow-xl border-4 border-[#232329]" />
+          <img src={profilePic} alt="Ethan Tsao" className="w-40 h-48 md:w-52 md:h-64 object-cover rounded-2xl shadow-xl border-4 border-[#232329]" loading="lazy" />
         </div>
       </div>
     </section>

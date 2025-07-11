@@ -43,7 +43,7 @@ function About() {
               {/* Aquila Clouds */}
               <div className="flex gap-3 items-center relative z-10 group">
                 <div className="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center overflow-hidden transition-transform duration-200 group-hover:scale-110 -translate-y-5 z-10">
-                  <img src={aquilaIcon} alt="Aquila Clouds" className="w-10 h-10 object-cover" />
+                  <img src={aquilaIcon} alt="Aquila Clouds" className="w-10 h-10 object-cover" loading="lazy" />
                 </div>
                 <div>
                   <div className="text-gray-400 text-sm">Jun 2025 - Present</div>
@@ -91,7 +91,7 @@ function About() {
               {/* UCSB */}
               <div className="flex gap-3 items-center relative z-10 group">
                 <div className="w-10 h-10 rounded-full flex items-center justify-center overflow-hidden transition-transform duration-200 group-hover:scale-110 -translate-y-5 z-10">
-                  <img src={ucsbIcon} alt="UCSB" className="w-10 h-10 object-cover" />
+                  <img src={ucsbIcon} alt="UCSB" className="w-10 h-10 object-cover" loading="lazy" />
                 </div>
                 <div>
                   <div className="text-gray-400 text-sm">Sep 2022 - Jun 2026</div>
@@ -105,7 +105,7 @@ function About() {
               {/* Dougherty Valley High School */}
               <div className="flex gap-3 items-center relative z-10 group">
                 <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center overflow-hidden transition-transform duration-200 group-hover:scale-110 -translate-y-5 z-10">
-                  <img src={dvhsIcon} alt="Dougherty Valley High School" className="w-10 h-10 object-cover" />
+                  <img src={dvhsIcon} alt="Dougherty Valley High School" className="w-10 h-10 object-cover" loading="lazy" />
                 </div>
                 <div>
                   <div className="text-gray-400 text-sm">Aug 2018 - Jun 2022</div>
