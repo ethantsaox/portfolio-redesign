@@ -25,9 +25,9 @@ function Hero() {
           <h1 className="text-2xl md:text-3xl font-bold mb-0.5 tracking-tight leading-tight text-white">
             Hey! Ethan here. <WavingHand />
           </h1>
-          <div className="text-base md:text-lg mb-0.5 text-gray-200 flex items-center justify-center md:justify-start gap-2">
+          <div className="text-base md:text-lg mb-0.5 text-gray-200 flex items-center justify-center md:justify-start gap-2 relative">
             21yo student from the Bay Area
-            <img src={gswLogo} alt="Golden State Warriors" className="w-9 h-6 inline-block align-middle" />
+            <img src={gswLogo} alt="Golden State Warriors" className="w-9 h-10 absolute top-1/2 -translate-y-1/2 left-full ml-2" />
           </div>
           <div className="text-base md:text-lg text-gray-200 mb-0.5">
             Data science, full-stack, and analytics.<br />
