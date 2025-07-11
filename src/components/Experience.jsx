@@ -13,6 +13,7 @@ import pytorchLogo from '../assets/pytorchlogo.png';
 import jupyterLogo from '../assets/jupyterlogo.png';
 import scikitLogo from '../assets/scikitlogo.png';
 import tensorLogo from '../assets/tensorlogo.png';
+import { useFadeInOnScroll } from '../hooks/useFadeInOnScroll';
 
 const skills = [
   { name: 'Python', icon: pythonLogo },
@@ -30,8 +31,17 @@ const skills = [
 ];
 
 function Experience() {
+  const [experienceRef, isExperienceVisible] = useFadeInOnScroll(0.1);
   return (
-    <section id="experience" className="w-full min-h-[40vh] text-white py-8">
+    <section 
+      ref={experienceRef}
+      id="experience" 
+      className={`w-full min-h-[40vh] text-white py-8 transition-all duration-1000 ease-out ${
+        isExperienceVisible 
+          ? 'opacity-100 translate-y-0' 
+          : 'opacity-0 translate-y-8'
+      }`}
+    >
       <div className="max-w-5xl mx-auto px-6 flex flex-col items-center">
         <div className="w-full max-w-2xl mx-auto">
           <h2 className="text-xs md:text-sm font-medium mb-3 text-center border border-[#232329] rounded-lg bg-[#18181b] px-2 py-1 inline-block w-auto">Tech Stack</h2>

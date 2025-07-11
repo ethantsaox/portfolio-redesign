@@ -2,11 +2,21 @@ import React, { useState } from 'react';
 import aquilaIcon from '../assets/aquilacloudsicon.png';
 import ucsbIcon from '../assets/ucsbicon.png';
 import dvhsIcon from '../assets/dvhs.png';
+import { useFadeInOnScroll } from '../hooks/useFadeInOnScroll';
 
 function About() {
   const [tab, setTab] = useState('work');
+  const [aboutRef, isAboutVisible] = useFadeInOnScroll(0.1);
   return (
-    <section id="about" className="w-full min-h-[40vh] text-white pt-8 pb-8 flex justify-center items-start">
+    <section 
+      ref={aboutRef}
+      id="about" 
+      className={`w-full min-h-[40vh] text-white pt-4 pb-8 flex justify-center items-start transition-all duration-1000 ease-out ${
+        isAboutVisible 
+          ? 'opacity-100 translate-y-0' 
+          : 'opacity-0 translate-y-8'
+      }`}
+    >
       <div className="w-full max-w-2xl mx-auto">
         <div className="flex bg-[#18181b] mb-3 border border-[#232329] justify-between items-center rounded-lg">
           <button

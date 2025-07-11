@@ -1,62 +1,21 @@
 import React, { useState } from 'react';
 import profilePic from '../assets/profile-pic7.jpg';
-import oryxGif from '../assets/oryx.gif';
-import goldCoin from '../assets/gold.png';
 import resumeIcon from '../assets/resume.png';
+import { useFadeInOnScroll } from '../hooks/useFadeInOnScroll';
 
 function Hero() {
-  const [coins, setCoins] = useState([]);
-
-  function handleOryxClick(e) {
-    const rect = e.target.getBoundingClientRect();
-    const parentRect = document.getElementById('hero').getBoundingClientRect();
-    // Randomize offset within -20px to +20px for both x and y
-    const offsetX = Math.random() * 40 - 20;
-    const offsetY = Math.random() * 40 - 20;
-    // Position relative to hero section
-    const id = Date.now() + Math.random();
-    const x = rect.right - rect.width / 2 + offsetX - parentRect.left;
-    const y = rect.top + rect.height / 2 + offsetY - parentRect.top;
-    setCoins((prev) => [
-      ...prev,
-      { id, x, y }
-    ]);
-    setTimeout(() => {
-      setCoins((prev) => prev.filter((c) => c.id !== id));
-    }, 400);
-  }
-
-  function handleAnimationEnd(id) {
-    setCoins((prev) => prev.filter((c) => c.id !== id));
-  }
+  const [heroRef, isHeroVisible] = useFadeInOnScroll(0.1);
 
   return (
     <section
+      ref={heroRef}
       id="hero"
-      className="w-full min-h-[40vh] flex items-center justify-center px-4 pt-4 pb-8 relative"
+      className={`w-full min-h-[40vh] flex items-center justify-center px-4 pt-4 pb-8 relative transition-all duration-1000 ease-out mt-8 ${
+        isHeroVisible 
+          ? 'opacity-100 translate-y-0' 
+          : 'opacity-0 translate-y-8'
+      }`}
     >
-      {/* Oryx in top right corner */}
-      <img
-        src={oryxGif}
-        alt="Oryx"
-        className="w-9 h-9 absolute top-4 right-4 md:top-8 md:right-8 z-20 rounded cursor-pointer"
-        onClick={handleOryxClick}
-      />
-      {/* Coin Animation */}
-      {coins.map((coin) => (
-        <div
-          key={coin.id}
-          className="pointer-events-none absolute z-50"
-          style={{ left: `${coin.x}px`, top: `${coin.y}px` }}
-        >
-          <img
-            src={goldCoin}
-            alt="Coin"
-            className="w-7 h-7 animate-coin-pop-fast select-none"
-            onAnimationEnd={() => handleAnimationEnd(coin.id)}
-          />
-        </div>
-      ))}
       <div className="w-full max-w-3xl flex flex-col md:flex-row items-center justify-center gap-1 md:gap-3">
         {/* Text Content */}
         <div className="flex flex-col justify-center items-center md:items-start gap-2 text-center md:text-left order-2 md:order-1 md:max-w-[28rem] w-full">

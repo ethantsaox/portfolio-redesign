@@ -8,6 +8,7 @@ import dashboardImg from '../assets/Dashboard 1.png';
 import worldhappyImg from '../assets/worldhappy.png';
 import bankmanGif from '../assets/bankman.gif';
 import cloneGif from '../assets/clone.gif';
+import { useFadeInOnScroll } from '../hooks/useFadeInOnScroll';
 
 const projects = [
   {
@@ -77,8 +78,17 @@ const projects = [
 ];
 
 function Projects() {
+  const [projectsRef, isProjectsVisible] = useFadeInOnScroll(0.1);
   return (
-    <section id="projects" className="w-full min-h-[40vh] text-white py-8">
+    <section 
+      ref={projectsRef}
+      id="projects" 
+      className={`w-full min-h-[40vh] text-white py-8 transition-all duration-1000 ease-out ${
+        isProjectsVisible 
+          ? 'opacity-100 translate-y-0' 
+          : 'opacity-0 translate-y-8'
+      }`}
+    >
       <div className="max-w-6xl mx-auto px-6 flex flex-col items-center">
         <div className='w-full max-w-2xl mx-auto'>
           <h2 className="text-xs md:text-sm font-semibold mb-3 text-left border border-[#232329] rounded-lg bg-[#18181b] px-2 py-1 inline-block w-auto">Recent Projects</h2>

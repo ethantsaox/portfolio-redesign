@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import { useFadeInOnScroll } from '../hooks/useFadeInOnScroll';
 
 function Contact() {
   const [formData, setFormData] = useState({
@@ -7,6 +8,7 @@ function Contact() {
     email: '',
     message: ''
   });
+  const [contactRef, isContactVisible] = useFadeInOnScroll(0.1);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -38,7 +40,15 @@ function Contact() {
   };
 
   return (
-    <section id="contact" className="w-full min-h-[40vh] text-white py-8">
+    <section 
+      ref={contactRef}
+      id="contact" 
+      className={`w-full min-h-[40vh] text-white py-8 transition-all duration-1000 ease-out ${
+        isContactVisible 
+          ? 'opacity-100 translate-y-0' 
+          : 'opacity-0 translate-y-8'
+      }`}
+    >
       <div className="w-full max-w-[44rem] mx-auto px-4 flex flex-col items-center">
         {/* Make the Contact title left-justified and aligned with the form */}
         <div className="w-full flex justify-start">
