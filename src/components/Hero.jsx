@@ -38,7 +38,7 @@ function Hero() {
             <img src={whiteArrowGif} alt="Arrow" className="w-12 h-12 absolute -right-12 top-1/2 -translate-y-1/2" loading="lazy" />
           </div>
           <div className="text-sm text-gray-400 mb-1">
-            For more info, please find my <span className="font-medium text-gray-300">LinkedIn</span> instead.
+            For more info, please visit my <span className="font-medium text-gray-300">LinkedIn</span> instead.
           </div>
           <div className="flex flex-wrap gap-3 items-center justify-center md:justify-start mt-0.5">
             <a href="/Ethan_Tsao_Resume_Summer25.pdf" target="_blank" rel="noopener noreferrer" className="text-xs md:text-sm font-medium border border-[#232329] rounded-lg bg-[#18181b] px-2 py-1 inline-block w-auto text-white hover:bg-[#232329] transition flex items-center gap-1">
