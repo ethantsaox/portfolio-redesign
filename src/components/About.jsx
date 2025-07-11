@@ -49,7 +49,7 @@ function About() {
                   <div className="text-gray-400 text-sm">Jun 2025 - Present</div>
                   <div className="text-white text-base font-semibold">Aquila Clouds</div>
                   <div className="text-gray-400 mb-1 text-sm">Software Engineer Intern</div>
-                  <ul className="list-disc list-inside text-gray-300 text-sm space-y-1">
+                  <ul className="list-disc list-outside text-gray-300 text-sm space-y-1 ml-4">
                     <li>FinOps User Interface</li>
                   </ul>
                 </div>
@@ -63,7 +63,7 @@ function About() {
                   <div className="text-gray-400 text-sm">Oct 2024 - Jun 2025</div>
                   <div className="text-white text-base font-semibold">Mosher Alumni Hall</div>
                   <div className="text-gray-400 mb-1 text-sm">Alumni Affairs Intern</div>
-                  <ul className="list-disc list-inside text-gray-300 text-sm space-y-1">
+                  <ul className="list-disc list-outside text-gray-300 text-sm space-y-1 ml-4">
                     <li>Event Planning</li>
                   </ul>
                 </div>
@@ -77,7 +77,7 @@ function About() {
                   <div className="text-gray-400 text-sm">Jul 2021 - May 2022</div>
                   <div className="text-white text-base font-semibold">Quickly Corporation</div>
                   <div className="text-gray-400 mb-1 text-sm">Crew Member</div>
-                  <ul className="list-disc list-inside text-gray-300 text-sm space-y-1">
+                  <ul className="list-disc list-outside text-gray-300 text-sm space-y-1 ml-4">
                     <li>Food Service</li>
                   </ul>
                 </div>
@@ -97,7 +97,7 @@ function About() {
                   <div className="text-gray-400 text-sm">Sep 2022 - Jun 2026</div>
                   <div className="text-white text-base font-bold">University of California Santa Barbara</div>
                   <div className="text-gray-400 mb-1 text-sm">B.S. in Statistics and Data Science</div>
-                  <ul className="list-disc list-inside text-gray-300 text-sm space-y-1">
+                  <ul className="list-disc list-outside text-gray-300 text-sm space-y-1 ml-4">
                     <li>TMP Certificate, Delta Sigma Pi, Gaucho Sports Analytics</li>
                   </ul>
                 </div>
@@ -111,7 +111,7 @@ function About() {
                   <div className="text-gray-400 text-sm">Aug 2018 - Jun 2022</div>
                   <div className="text-white text-base font-bold">Dougherty Valley High School</div>
                   <div className="text-gray-400 mb-1 text-sm">High School Diploma</div>
-                  <ul className="list-disc list-inside text-gray-300 text-sm space-y-1">
+                  <ul className="list-disc list-outside text-gray-300 text-sm space-y-1 ml-4">
                     <li>San Ramon, CA</li>
                   </ul>
                 </div>
