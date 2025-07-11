@@ -2,7 +2,9 @@ import React, { useState } from 'react';
 import profilePic from '../assets/profile-pic7.jpg';
 import resumeIcon from '../assets/resume.png';
 import whiteArrowGif from '../assets/whitearrowgif.gif';
+import gswLogo from '../assets/gsw.png';
 import { useFadeInOnScroll } from '../hooks/useFadeInOnScroll';
+import WavingHand from './WavingHand';
 
 function Hero() {
   const [heroRef, isHeroVisible] = useFadeInOnScroll(0.1);
@@ -21,10 +23,11 @@ function Hero() {
         {/* Text Content */}
         <div className="flex flex-col justify-center items-center md:items-start gap-2 text-center md:text-left order-2 md:order-1 md:max-w-[28rem] w-full">
           <h1 className="text-2xl md:text-3xl font-bold mb-0.5 tracking-tight leading-tight text-white">
-            Hey! Ethan here. <span className="inline-block align-middle ml-1"></span>
+            Hey! Ethan here. <WavingHand />
           </h1>
-          <div className="text-base md:text-lg mb-0.5 text-gray-200">
-            21yo student from California
+          <div className="text-base md:text-lg mb-0.5 text-gray-200 flex items-center justify-center md:justify-start gap-2">
+            21yo student from the Bay Area
+            <img src={gswLogo} alt="Golden State Warriors" className="w-9 h-10 inline-block" />
           </div>
           <div className="text-base md:text-lg text-gray-200 mb-0.5">
             Data science, full-stack, and analytics.<br />
