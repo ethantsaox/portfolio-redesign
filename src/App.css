@@ -122,3 +122,26 @@
   border-image: none;
   border-color: #232329;
 }
+
+/* Custom scrollbar styles */
+html, body {
+  scrollbar-width: thin; /* Firefox */
+  -ms-overflow-style: auto; /* IE 10+ */
+}
+
+html::-webkit-scrollbar, body::-webkit-scrollbar {
+  width: 8px; /* Chrome, Safari, Opera */
+}
+
+html::-webkit-scrollbar-track, body::-webkit-scrollbar-track {
+  background: #1a1a1a; /* Dark track */
+}
+
+html::-webkit-scrollbar-thumb, body::-webkit-scrollbar-thumb {
+  background: #3b82f6; /* Blue thumb */
+  border-radius: 4px;
+}
+
+html::-webkit-scrollbar-thumb:hover, body::-webkit-scrollbar-thumb:hover {
+  background: #2563eb; /* Darker blue on hover */
+}
