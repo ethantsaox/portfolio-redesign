@@ -2,30 +2,14 @@ import React from 'react';
 import { GlobeAltIcon, CodeBracketIcon } from '@heroicons/react/24/outline';
 import dashboardImg from '../assets/Dashboard-1-optimized.png';
 import worldhappyImg from '../assets/worldhappy-optimized.png';
-import bankmanGif from '../assets/bankman.gif';
-import cloneGif from '../assets/clone.gif';
+import bankchurnImg from '../assets/bankchurn.png';
+import portimgImg from '../assets/portimg.png';
 import { useFadeInOnScroll } from '../hooks/useFadeInOnScroll';
 
 const projects = [
   {
-    title: 'Bank Churn Analysis',
-    image: bankmanGif,
-    description:
-      'Applied customer segmentation and deployed classification models to detect churn patterns.',
-    tech: [
-      'R', 'ggplot', 'tidymodels',
-    ],
-    buttons: [
-      {
-        label: 'Source',
-        href: 'https://ethantsaox.github.io/Bank-Churn-Analysis/',
-        icon: GlobeAltIcon,
-      },
-    ],
-  },
-  {
     title: 'Portfolio Redesign',
-    image: cloneGif,
+    image: portimgImg,
     description:
       'A complete redesign of my personal portfolio with new animations and a modern stack.',
     tech: [
@@ -36,6 +20,22 @@ const projects = [
         label: 'Source',
         href: '#',
         icon: CodeBracketIcon,
+      },
+    ],
+  },
+  {
+    title: 'Bank Churn Analysis',
+    image: bankchurnImg,
+    description:
+      'Applied customer segmentation and deployed classification models to detect churn patterns.',
+    tech: [
+      'R', 'ggplot', 'tidymodels',
+    ],
+    buttons: [
+      {
+        label: 'Source',
+        href: 'https://ethantsaox.github.io/Bank-Churn-Analysis/',
+        icon: GlobeAltIcon,
       },
     ],
   },
