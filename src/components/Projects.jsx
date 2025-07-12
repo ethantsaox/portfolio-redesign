@@ -2,8 +2,8 @@ import React from 'react';
 import { GlobeAltIcon, CodeBracketIcon } from '@heroicons/react/24/outline';
 import dashboardImg from '../assets/Dashboard-1-optimized.png';
 import worldhappyImg from '../assets/worldhappy-optimized.png';
-import bankchurnImg from '../assets/bankchurn.png';
-import portimgImg from '../assets/portimg.png';
+import bankchurnImg from '../assets/bankchurn-optimized.png';
+import portimgImg from '../assets/portimg-optimized.png';
 import { useFadeInOnScroll } from '../hooks/useFadeInOnScroll';
 
 const projects = [

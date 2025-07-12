@@ -13,7 +13,7 @@ function Sidebar() {
       <div className="max-w-3xl mx-auto flex flex-row items-center justify-between px-4 font-sans font-normal text-base text-gray-400">
         <button
           onClick={() => window.location.reload()}
-          className="font-bold text-white text-xl select-none tracking-tight ml-[34px] bg-transparent border-none cursor-pointer focus:outline-none"
+          className="hidden md:block font-bold text-white text-xl select-none tracking-tight ml-[34px] bg-transparent border-none cursor-pointer focus:outline-none"
           style={{ appearance: 'none' }}
           aria-label="Refresh page"
         >

@@ -44,7 +44,7 @@ function AnimatedScrollBar() {
   const trackHeight = 140; // px
 
   return (
-    <div style={{
+    <div className="hidden md:block" style={{
       position: 'fixed',
       right: 0,
       top: '50%',
