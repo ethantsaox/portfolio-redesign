@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 function clamp(val, min, max) {
   return Math.max(min, Math.min(max, val));
@@ -13,6 +13,7 @@ function AnimatedScrollBar() {
   const animVal = useRef(0); // animated value
   const targetVal = useRef(0); // target value
   const rafRef = useRef();
+  const [isAtTop, setIsAtTop] = useState(true);
 
   useEffect(() => {
     function onScroll() {
@@ -21,6 +22,9 @@ function AnimatedScrollBar() {
       const scrollHeight = doc.scrollHeight - window.innerHeight;
       const percent = scrollHeight > 0 ? clamp(scrollTop / scrollHeight, 0, 1) : 0;
       targetVal.current = percent;
+      
+      // Check if we're at the top (within 10px to account for small scroll amounts)
+      setIsAtTop(scrollTop < 10);
     }
     window.addEventListener('scroll', onScroll);
     onScroll();
@@ -41,7 +45,7 @@ function AnimatedScrollBar() {
 
   // Bar dimensions
   const barWidth = 6; // px
-  const trackHeight = 140; // px
+  const trackHeight = 200; // px
 
   return (
     <div className="hidden md:block" style={{
@@ -61,7 +65,7 @@ function AnimatedScrollBar() {
       <div style={{
         width: barWidth,
         height: trackHeight,
-        background: 'rgba(80,110,180,0.13)',
+        background: isAtTop ? 'transparent' : 'rgba(80,110,180,0.13)',
         borderRadius: barWidth,
         marginRight: 4,
         position: 'relative',
@@ -69,6 +73,7 @@ function AnimatedScrollBar() {
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'flex-end',
+        transition: 'background 0.3s ease',
       }}>
         {/* Fill */}
         <div
