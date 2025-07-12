@@ -1,7 +1,7 @@
 import React, { useRef, useEffect } from 'react';
 
-const DOTS = 10;
-const DOT_SIZE = 1.5;
+const DOTS = 15;
+const DOT_SIZE = 1;
 const SPEED = 0.15;
 
 function random(min, max) {

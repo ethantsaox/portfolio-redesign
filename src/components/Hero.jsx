@@ -13,7 +13,7 @@ function Hero() {
     <section
       ref={heroRef}
       id="hero"
-      className={`w-full min-h-[40vh] flex items-center justify-center px-4 pt-4 pb-8 relative transition-all duration-1000 ease-out mt-8 ${
+      className={`w-full min-h-[40vh] flex items-center justify-center px-4 pt-4 pb-8 relative transition-all duration-1000 ease-out ${
         isHeroVisible 
           ? 'opacity-100 translate-y-0' 
           : 'opacity-0 translate-y-8'

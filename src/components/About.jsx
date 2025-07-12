@@ -11,7 +11,7 @@ function About() {
     <section 
       ref={aboutRef}
       id="about" 
-      className={`w-full min-h-[40vh] text-white pt-4 pb-8 flex justify-center items-start transition-all duration-1000 ease-out ${
+      className={`scroll-mt-20 w-full min-h-[40vh] text-white pt-4 pb-8 flex justify-center items-start transition-all duration-1000 ease-out ${
         isAboutVisible 
           ? 'opacity-100 translate-y-0' 
           : 'opacity-0 translate-y-8'

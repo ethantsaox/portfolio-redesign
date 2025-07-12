@@ -20,15 +20,15 @@ function App() {
     return false;
   });
 
-  const [showSplash, setShowSplash] = useState(true);
-  const [fadeIn, setFadeIn] = useState(false);
-  const [opacity, setOpacity] = useState(0.7);
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setShowSplash(false);
-    }, 2000);
-    return () => clearTimeout(timer);
-  }, []);
+  const [showSplash, setShowSplash] = useState(false); // Temporarily disabled
+  const [fadeIn, setFadeIn] = useState(true); // Start with fade-in enabled
+  const [opacity, setOpacity] = useState(1); // Start with full opacity
+  // useEffect(() => {
+  //   const timer = setTimeout(() => {
+  //     setShowSplash(false);
+  //   }, 2000);
+  //   return () => clearTimeout(timer);
+  // }, []);
 
   // Trigger fade-in after splash is hidden
   React.useEffect(() => {
@@ -88,7 +88,7 @@ function App() {
       <AnimatedDotsBackground />
       <AnimatedScrollBar />
       <Sidebar darkMode={darkMode} setDarkMode={setDarkMode} />
-      <main className="flex-1 bg-gradient-to-br from-[#050509] via-[#101014] to-[#181c2b] min-h-screen">
+      <main className="flex-1 bg-[#0a0a0a] min-h-screen pt-16">
         <Hero />
         <About />
         <Experience />
