@@ -10,6 +10,7 @@ import Footer from './components/Footer';
 import AnimatedScrollBar from './components/AnimatedScrollBar';
 import SplashScreen from './components/SplashScreen';
 import AnimatedDotsBackground from './components/AnimatedDotsBackground';
+import MountainRange from './components/MountainRange';
 
 function App() {
   const [darkMode, setDarkMode] = useState(() => {
@@ -86,9 +87,10 @@ function App() {
       style={{ opacity: opacity, transition: 'opacity 2000ms cubic-bezier(.4,1.2,.4,1)' }}
     >
       <AnimatedDotsBackground />
+      <MountainRange />
       <AnimatedScrollBar />
       <Sidebar darkMode={darkMode} setDarkMode={setDarkMode} />
-      <main className="flex-1 bg-[#0a0a0a] min-h-screen pt-16">
+      <main className="flex-1 bg-[#0a0a12] min-h-screen pt-16">
         <Hero />
         <About />
         <Experience />
