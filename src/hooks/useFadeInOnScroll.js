@@ -31,4 +31,4 @@ export const useFadeInOnScroll = (threshold = 0.1) => {
   }, [threshold]);
 
   return [elementRef, isVisible];
-}; 
+};

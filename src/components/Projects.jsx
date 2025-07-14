@@ -115,7 +115,7 @@ function Projects() {
                       href={btn.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-1 px-2 py-1 rounded-lg border border-[#232329] bg-white hover:bg-gray-100 text-gray-900 font-medium text-xs transition shadow-sm hover:ring-2 hover:ring-[#3b82f6] hover:-translate-y-0.5"
+                      className="flex items-center gap-1 px-2 py-1 rounded-lg border border-[#232329] bg-white hover:bg-gray-100 text-gray-900 font-medium text-xs transition shadow-sm hover:ring-2 hover:ring-[#3b82f6]"
                     >
                       <btn.icon className="w-4 h-4" />
                       {btn.label}
@@ -131,4 +131,4 @@ function Projects() {
   );
 }
 
-export default Projects; 
+export default Projects;

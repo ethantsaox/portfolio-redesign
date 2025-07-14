@@ -30,13 +30,8 @@ body {
 }
 
 html, body {
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none; /* IE 10+ */
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
-}
-html::-webkit-scrollbar, body::-webkit-scrollbar {
-  display: none; /* Chrome, Safari, Opera */
 }
 
 /* Custom cursor for tech stack icons */
