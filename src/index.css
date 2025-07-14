@@ -34,6 +34,30 @@ html, body {
   -webkit-overflow-scrolling: touch;
 }
 
+/* Scrollbar styling for consistent appearance across all environments */
+html::-webkit-scrollbar {
+  width: 12px;
+}
+
+html::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+
+html::-webkit-scrollbar-thumb {
+  background: #666;
+  border-radius: 6px;
+}
+
+html::-webkit-scrollbar-thumb:hover {
+  background: #888;
+}
+
+/* Firefox scrollbar styling */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: #666 #1a1a1a;
+}
+
 /* Custom cursor for tech stack icons */
 .tech-stack-icon {
   cursor: url('./assets/circlecursor.png'), auto;
