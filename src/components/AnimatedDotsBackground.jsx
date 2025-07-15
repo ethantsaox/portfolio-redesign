@@ -1,18 +1,43 @@
 import React, { useRef, useEffect } from 'react';
 
-const DOTS = 8; // Reduced from 15
-const DOT_SIZE = 1;
-const SPEED = 0.1; // Reduced from 0.15
-const TARGET_FPS = 30; // Target 30fps instead of 60fps
+const STARS = 30; // More stars for better visibility
+const MIN_STAR_SIZE = 2;
+const MAX_STAR_SIZE = 4;
+const SPEED = 0.08; // Slower, more graceful movement
+const TARGET_FPS = 60; // Back to 60fps for smooth twinkling
 const FRAME_INTERVAL = 1000 / TARGET_FPS;
 
 function random(min, max) {
   return Math.random() * (max - min) + min;
 }
 
+function drawStar(ctx, x, y, size) {
+  const spikes = 5;
+  const outerRadius = size;
+  const innerRadius = size * 0.4;
+  
+  ctx.beginPath();
+  
+  for (let i = 0; i < spikes * 2; i++) {
+    const angle = (i * Math.PI) / spikes;
+    const radius = i % 2 === 0 ? outerRadius : innerRadius;
+    const xPos = x + Math.cos(angle) * radius;
+    const yPos = y + Math.sin(angle) * radius;
+    
+    if (i === 0) {
+      ctx.moveTo(xPos, yPos);
+    } else {
+      ctx.lineTo(xPos, yPos);
+    }
+  }
+  
+  ctx.closePath();
+  ctx.fill();
+}
+
 function AnimatedDotsBackground() {
   const canvasRef = useRef(null);
-  const dots = useRef([]);
+  const stars = useRef([]);
   const lastFrameTime = useRef(0);
   const isVisible = useRef(true);
 
@@ -31,20 +56,23 @@ function AnimatedDotsBackground() {
       height = window.innerHeight;
       canvas.width = width;
       canvas.height = height;
-      // Reinitialize dots on resize
-      initializeDots();
+      // Reinitialize stars on resize
+      initializeStars();
     }
 
-    function initializeDots() {
-      dots.current = Array.from({ length: DOTS }).map((_, i) => {
-        // Half the dots near the bottom, half random
-        if (i < Math.floor(DOTS / 2)) {
+    function initializeStars() {
+      stars.current = Array.from({ length: STARS }).map((_, i) => {
+        // Half the stars near the bottom, half random
+        if (i < Math.floor(STARS / 2)) {
           return {
             x: random(0, width),
             y: random(height * 0.7, height),
             vx: random(-SPEED, SPEED),
             vy: random(-SPEED, SPEED),
-            alpha: random(0.7, 0.9), // Reduced alpha for better performance
+            alpha: random(0.7, 0.9),
+            size: random(MIN_STAR_SIZE, MAX_STAR_SIZE),
+            twinklePhase: random(0, Math.PI * 2),
+            twinkleSpeed: random(0.02, 0.05),
           };
         } else {
           return {
@@ -53,6 +81,9 @@ function AnimatedDotsBackground() {
             vx: random(-SPEED, SPEED),
             vy: random(-SPEED, SPEED),
             alpha: random(0.7, 0.9),
+            size: random(MIN_STAR_SIZE, MAX_STAR_SIZE),
+            twinklePhase: random(0, Math.PI * 2),
+            twinkleSpeed: random(0.02, 0.05),
           };
         }
       });
@@ -90,19 +121,21 @@ function AnimatedDotsBackground() {
       // Batch drawing for better performance
       ctx.fillStyle = '#ffffff';
       
-      for (let dot of dots.current) {
+      for (let star of stars.current) {
         // Move
-        dot.x += dot.vx;
-        dot.y += dot.vy;
+        star.x += star.vx;
+        star.y += star.vy;
         // Bounce off edges
-        if (dot.x < 0 || dot.x > width) dot.vx *= -1;
-        if (dot.y < 0 || dot.y > height) dot.vy *= -1;
+        if (star.x < 0 || star.x > width) star.vx *= -1;
+        if (star.y < 0 || star.y > height) star.vy *= -1;
         
-        // Draw without shadows for better performance
-        ctx.globalAlpha = dot.alpha;
-        ctx.beginPath();
-        ctx.arc(dot.x, dot.y, DOT_SIZE, 0, 2 * Math.PI);
-        ctx.fill();
+        // Update twinkling
+        star.twinklePhase += star.twinkleSpeed;
+        const twinkleAlpha = star.alpha * (0.3 + 0.7 * (Math.sin(star.twinklePhase) + 1) / 2);
+        
+        // Draw star with twinkling effect
+        ctx.globalAlpha = twinkleAlpha;
+        drawStar(ctx, star.x, star.y, star.size);
       }
       
       ctx.globalAlpha = 1;
