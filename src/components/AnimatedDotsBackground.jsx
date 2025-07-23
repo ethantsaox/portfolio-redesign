@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from 'react';
 
-const STARS = 30; // More stars for better visibility
+const STARS = 10; // More stars for better visibility
 const MIN_STAR_SIZE = 2;
 const MAX_STAR_SIZE = 4;
 const SPEED = 0.08; // Slower, more graceful movement
