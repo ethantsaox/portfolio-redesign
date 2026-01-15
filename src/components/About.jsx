@@ -46,7 +46,7 @@ function About() {
                   <img src={aquilaIcon} alt="Aquila Clouds" className="w-10 h-10 object-cover" loading="lazy" />
                 </div>
                 <div>
-                  <div className="text-gray-400 text-sm">Jun 2025 - Present</div>
+                  <div className="text-gray-400 text-sm">Jun 2025 - Sep 2025</div>
                   <div className="text-white text-base font-semibold">Aquila Clouds</div>
                   <div className="text-gray-400 mb-1 text-sm">Software Engineer Intern</div>
                   <ul className="list-disc list-outside text-gray-300 text-sm space-y-1 ml-4">

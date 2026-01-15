@@ -1,5 +1,6 @@
 import React from 'react';
 import { GlobeAltIcon, CodeBracketIcon } from '@heroicons/react/24/outline';
+import jobflowImg from '../assets/jobflow-dashboard.png';
 import dashboardImg from '../assets/Dashboard-1-optimized.png';
 import worldhappyImg from '../assets/worldhappy-optimized.png';
 import bankchurnImg from '../assets/bankchurn-optimized.png';
@@ -7,6 +8,22 @@ import portimgImg from '../assets/portimg-optimized.png';
 import { useFadeInOnScroll } from '../hooks/useFadeInOnScroll';
 
 const projects = [
+  {
+    title: 'JobFlow: Job Application Intelligence',
+    image: jobflowImg,
+    description:
+      'Full-stack job tracking system with integrated market analytics dashboard.',
+    tech: [
+      'React', 'FastAPI', 'PostgreSQL', 'Tableau', 'Python',
+    ],
+    buttons: [
+      {
+        label: 'Source',
+        href: 'https://github.com/ethantsaox/JobFlow',
+        icon: CodeBracketIcon,
+      },
+    ],
+  },
   {
     title: 'Portfolio Redesign',
     image: portimgImg,
