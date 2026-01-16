@@ -30,8 +30,8 @@ function Hero() {
             <img src={gswLogo} alt="Golden State Warriors" className="w-9 h-10 absolute top-1/2 -translate-y-1/2 left-full ml-2" loading="lazy" />
           </div>
           <div className="text-base md:text-lg text-gray-200 mb-0.5">
-            Data science, full-stack, and analytics.<br />
-            I build, analyze, and automate.
+            Data analytics, visualization, and insights.<br />
+            I build, analyze, and visualize.
           </div>
           <div className="text-base font-semibold text-white mb-0.5 relative">
             Questions? <span className="text-gray-100">email me directly below</span>

@@ -94,7 +94,7 @@ function About() {
                   <img src={ucsbIcon} alt="UCSB" className="w-10 h-10 object-cover" loading="lazy" />
                 </div>
                 <div>
-                  <div className="text-gray-400 text-sm">Sep 2022 - Jun 2026</div>
+                  <div className="text-gray-400 text-sm">Sep 2022 - Dec 2025</div>
                   <div className="text-white text-base font-bold">University of California Santa Barbara</div>
                   <div className="text-gray-400 mb-1 text-sm">B.S. in Statistics and Data Science</div>
                   <ul className="list-disc list-outside text-gray-300 text-sm space-y-1 ml-4">
