@@ -4,7 +4,6 @@ import jobflowImg from '../assets/jobflow-dashboard.png';
 import dashboardImg from '../assets/Dashboard-1-optimized.png';
 import worldhappyImg from '../assets/worldhappy-optimized.png';
 import bankchurnImg from '../assets/bankchurn-optimized.png';
-import portimgImg from '../assets/portimg-optimized.png';
 import { useFadeInOnScroll } from '../hooks/useFadeInOnScroll';
 
 const projects = [
@@ -20,22 +19,6 @@ const projects = [
       {
         label: 'Source',
         href: 'https://github.com/ethantsaox/JobFlow',
-        icon: CodeBracketIcon,
-      },
-    ],
-  },
-  {
-    title: 'Portfolio Redesign',
-    image: portimgImg,
-    description:
-      'A complete redesign of my personal portfolio with new animations and a modern stack.',
-    tech: [
-      'React', 'Vite', 'TailwindCSS', 'Framer Motion',
-    ],
-    buttons: [
-      {
-        label: 'Source',
-        href: '#',
         icon: CodeBracketIcon,
       },
     ],
